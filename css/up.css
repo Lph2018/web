@@ -1,0 +1,72 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	
+}
+header{
+	width: 1300px;
+	height: 70px;
+	margin: 20px auto;
+}
+.logo{
+	display: block;
+	width: 300px;
+	height: 70px;
+	margin-left: 30px;
+	float: left;
+	background: url(../imgs/logo.png)no-repeat;
+	background-size: contain;
+	text-indent: -990px;
+	overflow: hidden;
+}
+.up{
+	width: 200px;
+	height: 70px;
+	float: left;
+	line-height: 70px;
+	margin-top: 10px;
+	font-family: "黑体";
+}
+.bg{
+	width: 1300px;
+	height: 600px;
+	margin: 0 auto;
+	background-color: #ccc;
+	background: url(../imgs/bg.png)no-repeat;
+	position: relative;
+	
+}
+.bg div{
+	position: absolute;
+	top: 150px;
+	width: 400px;
+	height: 300px;
+	background-color: white;
+	margin-left: 850px;
+	font-size: 22px;
+	padding-top: 20px;
+	text-align: center;
+	
+}
+.bg div input{
+	width: 200px;
+	height: 40px;
+	border: 1px solid #ccc;
+}
+.bg div button{
+	width: 200px;
+	height: 40px;
+	background-color: #F88607;
+	color: white;
+	font-size: 22px;
+}
+.bottom{
+	margin: 20px auto;
+	text-align: center;
+}
