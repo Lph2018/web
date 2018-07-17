@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	div{
+		width: 400px;
+		height: 400px;
+		background-color: #ccc;
+		
+	}	
+</style>
+</head>
+<input type="button" value="变色" id="btn">
+<div id="box">
+	<span>这是一个span标签</span>
+	<p>这是一个p标签</p>
+	<span>这是一个span标签</span>
+	<p>这是一个p标签</p>
+	<span>这是一个span标签</span>
+	<p>这是一个p标签</p>
+	<span>这是一个span标签</span>
+	<p>这是一个p标签</p>
+	
+	<script>
+		var obtn = document.getElementById("btn");
+		//获取fiv
+		var obox = document.getElementById("box");
+		obtn.onclick=function(){
+			//获取div里面的所有子节点
+		var nodes = obox.childNodes;
+		//循环遍历所有的子节点
+		for(var i=0;i<nodes.length;i++){
+			//判断这个节点是不是P标签
+			if(nodes[i].nodeType==1&&nodes[i].nodeName=="P"){
+				nodes[i].style.backgroundColor="red";
+			}
+		}
+		}
+		
+	</script>
+</div>
+<body>
+</body>
+</html>

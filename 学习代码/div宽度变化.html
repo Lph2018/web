@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>  
+    div{
+        width: 400px;
+        height: 200px;
+        border-radius: 50px;
+        background-color: red;
+        
+    }
+    </style>
+<body>
+<div id="box">
+    
+</div>
+<br><br>
+<input type="button" value="变宽" id="btn">
+</body>
+</html>
+<script>
+    //获取div和按钮
+    var box= document.getElementById("box");
+    var btn = document.getElementById("btn");
+    //给按钮注册点击事件
+    btn.onclick=function(){
+        var num=400;
+        //添加定时器
+        var time= setInterval(function(){
+            num+=10;
+            box.style.width=num+'px';
+            if(num>1000){
+                num=400;
+                box.style.width=num+'px';
+                clearInterval(time);//清理定时器
+            }
+        },100)
+    }
+    
+    
+    
+    
+    
+    
+</script>

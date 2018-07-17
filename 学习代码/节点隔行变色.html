@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+<input type="button" value="变色" id="btn">
+<ul id="ou">
+	<li>这是一个li标签</li>
+	<li>这是一个li标签</li>
+	<li>这是一个li标签</li>
+	<li>这是一个li标签</li>
+	<li>这是一个li标签</li>
+	<li>这是一个li标签</li>
+	<li>这是一个li标签</li>
+	<li>这是一个li标签</li>
+</ul>
+
+	<script>
+		var ou = document.getElementById("ou");
+		var btn = document.getElementById("btn");
+		var num=0;
+		var nodes=ou.childNodes;
+		btn.onclick=function(){
+			for(var i=0;i<nodes.length;i++){
+			//判断这个节点是不是li标签
+				if(nodes[i].nodeType==1&&nodes[i].nodeName=="LI"){
+			num++;//记录li标签个数
+				nodes[i].style.backgroundColor=num%2==0?"red":"yellow";
+				
+				
+			}
+		}
+	
+		}
+		
+	</script>
+	
+</body>
+</html>

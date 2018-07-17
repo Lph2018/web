@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+}
+.box {
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+    margin: 0 auto;
+}
+</style>
+<body>
+<input type="button" value="添加" id="btn">
+<div class="box" id="obox"></div>
+</body>
+</html>
+<script>
+var kf=["降龙十八掌","玉女心经","葵花宝典","九阴真经"];
+//动态添加列表到DIV中
+var btn = document.getElementById("btn"); 
+var obox = document.getElementById("obox");
+    btn.onclick=function(){
+        //创建ul，把ul立刻添加到div中
+        var ulObj = document.createElement("ul");
+        obox.appendChild(ulObj);
+        //动态添加li添加到ul里面
+        for ( var i=0;i<kf.length;i++){
+            var liObj = document.createElement("li");
+            //设置li文字内容
+            liObj.innerHTML=kf[i];
+            ulObj.appendChild(liObj);
+            //为li添加鼠标事件
+            liObj.onmouseover=onmouseoverHandle;
+            liObj.onmouseout=onmouseoutHandle;      
+        }
+    }
+    //按钮点击事件外面
+    function onmouseoverHandle(){
+        this.style.backgroundColor="red";
+    }
+    function onmouseoutHandle(){
+         this.style.backgroundColor="";
+    }
+
+    
+</script>

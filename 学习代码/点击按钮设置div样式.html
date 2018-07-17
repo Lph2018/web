@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+div {
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+}
+.cls {
+    display: none;
+}
+</style>
+</head>
+<input type="button" value="设置样式" id="btn">
+<div id="dv"></div>
+<body>
+</body>
+</html>
+<script>
+	var btn = document.getElementById("btn");
+	var odv = document.getElementById("dv");
+	btn.onclick= function(){
+		if(odv.className!="cls"){
+			//现在是显示。应该隐藏
+			odv.className="cls";
+		}else{
+			odv.className="";
+		}
+	}
+</script>

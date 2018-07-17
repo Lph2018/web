@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	#dv{
+		width: 220px;
+		height: 220px;
+		background-color: pink;
+		display: n
+	}	
+</style>
+</head>
+<div id="dv"></div>
+<input type="button" value="隐藏" id="btn">
+<body>
+</body>
+</html>
+<script>
+	var odv= document.getElementById("dv");
+	var btn = document.getElementById("btn");
+	btn.onclick=function(){
+		if(this.value=="隐藏"){
+			odv.style.display="none";
+			this.value="显示";
+		}else if(this.value=="显示"){
+			odv.style.display="block";
+			this.value="隐藏";
+		}
+	}
+</script>
+

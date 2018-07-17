@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+.box {
+    width: 200px;
+    height: 400px;
+    background-color: #ccc;
+}
+</style>
+<body>
+<input type="button" value="添加" id="btn">
+<div class="box" id="obox"> </div>
+<script>
+    var obox=document.getElementById("obox");
+    var names=["航三","李四","王五","送刘","地方","发的","大幅度","是否"];
+    //获取按钮
+    var btn = document.getElementById("btn");
+    //添加点击事件
+    btn.onclick=function(){
+        var str = "<ul  style='list-style-type: none;cursor: pointer'>";
+        for(var i=0;i<names.length;i++){
+            str+="<li>"+names[i]+"</li>";
+        }
+        str+="</ul>";
+        obox.innerHTML=str;
+    //添加鼠标移入移出事件
+    //获取所有li标签
+    var list=obox.getElementsByTagName("li");
+    for(var i=0;i<list.length;i++){
+        list[i].onmouseover=function(){
+            this.style.backgroundColor="red";
+        }
+         list[i].onmouseout=function(){
+            this.style.backgroundColor="";
+        }
+    }
+        
+}
+
+        
+       
+    
+    
+    
+    
+    
+    
+</script>
+</body>
+</html>

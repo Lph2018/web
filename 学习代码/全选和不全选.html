@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid #c0c0c0;
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+}
+thead {
+    background-color: aqua;
+}
+th {
+    border: 1px solid red;
+}
+td {
+    background-color: #ccc;
+}
+</style>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th> <input type="checkbox" id="btn1"></th>
+            <th>菜名</th>
+            <th>价格</th>
+        </tr>
+    </thead>
+    <tbody id="obd">
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>番茄炒蛋</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>红烧肉</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>小龙虾</td>
+            <td>68</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
+<script>
+    //获取全选按钮
+    var btn1 = document.getElementById("btn1");
+    //获取所有的tbody中的复选框
+    var obd= document.getElementById("obd");
+    var cks= obd.getElementsByTagName("input");
+    //点击全选按钮获取当前状态，然后设置tbody中input标签状态
+    btn1.onclick=function(){
+        for(var i=0;i<cks.length;i++){
+            cks[i].checked=this.checked;
+        }
+    }
+    //获取tbody所有的复选框，分别注册点击事件
+     for(var i=0;i<cks.length;i++){
+        cks[i].onclick=function(){
+            var flag=true;//默认全部被选中
+            //判断是否所有的复选框都被选中
+            for(var j=0;j<cks.length;j++){
+                if(!cks[j].checked){
+                    //没选中进来
+                    flag=false;
+                    break;
+                }
+            }
+            //全选框的值就是flag的值
+            btn1.checked=flag;
+        }
+     }
+</script>

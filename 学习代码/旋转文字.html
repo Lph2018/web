@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		body{padding:200px;}
+		span{margin: 50px; font:500 120px '微软雅黑';color: #336699 ;position:relative;}
+		span:after,span:before{content:attr(data-zi);position: absolute;left: 0;top: 0; transform-origin:left center;transition: all 0.5s;}
+		span:after{color: #fff;transform: rotateX(0deg) rotateY(15deg) rotateZ(0deg);}
+		span:before{color: rgba(0,0,0,0.3);transform:scale(1.05,1);}
+		span:hover:after{transform: rotateX(0deg) rotateY(40deg) rotateZ(0deg);}
+		span:hover:before{transform: scale(1.05,1) rotateX(0deg) rotateY(30deg) rotateZ(0deg) skew(0deg,8deg); }
+	</style>
+</head>
+<body>
+	<span data-zi="高">高</span>
+	<span data-zi="薪">薪</span>
+	<span data-zi="就">就</span>
+	<span data-zi="业">业</span>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin: 0;padding: 0;list-style: none;}
+	nav{width: 807px;height: 30px;margin: 100px auto;border: 1px solid #ccc;}
+	nav li{width: 100px; height: 30px;border-right: 1px dashed #ccc;float:left;text-align: center;line-height: 30px;position: relative; overflow:hidden;}
+	nav span{width: 100px;height: 30px;background: pink;position: absolute;left: 0;bottom:-30px;z-index: -1;}
+	</style>
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	$(function () {
+		//把最后一个li的线框去掉
+		$('nav li:last').css('border',0);
+		//将span盒子追加到li
+		var mytag=$('<span></span>');
+		//$('nav li').append(mytag);
+		mytag.appendTo('nav li');
+		var colors=['pink','red','yellow','blue','orange','purple','green','#ccc'];
+		$('nav li span').each(function (index,el) {
+			$(el).css('background',colors[index]);
+		});
+		//鼠标移上移下特效
+		$('nav li').hover(function(){
+			//span上来
+			$(this).children('span').stop().animate({bottom:0},500);
+			$('audio').get($(this).index()).load();//工作经验，播放声音之前，先让声音加载完毕
+			$('audio').get($(this).index()).play();//播放
+		},function(){
+			$(this).children('span').stop().animate({bottom:-30},500);
+			$('audio').get($(this).index()).pause();
+		});
+	})
+	</script>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li>网站主页</li>
+			<li>网站主页</li>
+			<li>网站主页</li>
+			<li>网站主页</li>
+			<li>网站主页</li>
+			<li>网站主页</li>
+			<li>网站主页</li>
+			<li>网站主页</li>
+		</ul>
+	<audio src="a.mp3"></audio>
+	<audio src="a.mp3"></audio>
+	<audio src="a.mp3"></audio>
+	<audio src="a.mp3"></audio>
+	<audio src="a.mp3"></audio>
+	<audio src="a.mp3"></audio>
+	<audio src="a.mp3"></audio>
+	<audio src="a.mp3"></audio>
+	</nav>
+</body>
+</html>

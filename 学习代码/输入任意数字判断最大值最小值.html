@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+var n=prompt("您想要输入多少个数字");
+var m=new Array(n);
+for(i=0;i<n;i++){//输入数值
+	m[i]=prompt("输入第"+(i+1)+"个数字");
+	}
+	mi=m[0];
+	for(i=0;i<n;i++){//计算最小值
+		
+		if(m[i]<=mi)
+			mi=m[i];
+			
+		}
+		document.write("最小值为："+mi+"<br>");
+		ma=m[0];flag=0;
+			for(i=0;i<n;i++){//计算最大值
+				
+				if(ma<m[i]){
+					ma=m[i];
+					flag=i;//标志位
+					}
+			
+				}
+			document.write("最大值为："+ma+"是第"+(flag+1)+"个");
+		
+</script>
+
+</head>
+
+
+<body>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+    input{
+        margin: 20px auto;
+    }    
+    div{
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+    }
+</style>
+<body>
+<input type="button" value="移动500px" id="btn1">
+<input type="button" value="移动1000px" id="btn2">
+<div id="box"></div>
+</body>
+</html>
+<script>
+    //获取按钮的DIV
+    var box =document.getElementById("box");
+    var btn1 =document.getElementById("btn1");
+    var btn2 =document.getElementById("btn2");
+    //注册点击事件
+  
+    btn1.onclick=function(){
+         
+        var time = setInterval(function(){
+            var num=10;
+            var current = box.offsetLeft;
+            current+=num;
+            box.style.left=current+'px';
+            if(current>=500){
+                clearInterval(time);
+                }
+        },100); 
+        
+    }
+
+//    btn2.onclick=function(){
+//         num=500;
+//        var time1 = setInterval(function(){
+//            num+=10;
+//            box.style.left=num+'px';
+//            if(num>=1000){
+//                clearInterval(time1);
+//            }
+//        },100); 
+//    }  
+//    
+
+
+
+
+
+
+
+</script>

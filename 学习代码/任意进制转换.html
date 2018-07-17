@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function show(){
+	var x=prompt("请输入所要转换的数");
+	var y=prompt("请输入所要转换的进制");
+	b=parseInt(y);
+	if(x==""){
+		alert("请重新输入");
+		}else if(typeof x=="string"){
+			for(i=0;i<x.length;i++){
+				c=x.charAt(i);
+				if(c>='A'&&c<='z'){
+					m=parseInt(c.charCodeAt());
+					document.write((m.toString(b)));
+					}else{
+				a=parseInt(x);
+				
+				document.write((a.toString(b)));}
+				}
+			}
+	}
+</script>
+
+</head>
+
+<body>
+<input type="button" value="进制转换" onClick="show()"/>
+
+</body>
+</html>

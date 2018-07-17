@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">	
+		window.onload=function(){
+			var R=document.getElementById("R");
+			var G=document.getElementById("G");
+			var B=document.getElementById("B");
+			var rval=0;
+			var gval=0;
+			var bval=0;
+			R.onchange=function(){
+					rval=this.value;
+					//gval=this.value;
+					//bval=this.value;
+					document.body.style.background='rgb('+rval+','+gval+','+bval+')';
+					document.getElementById('rnum').innerHTML=rval;
+				}
+			G.onchange=function(){
+				gval=this.value;
+				document.body.style.background='rgb('+rval+','+gval+','+bval+')'
+				document.getElementById('gnum').innerHTML=gval;
+			}
+			B.onchange=function(){
+				bval=this.value;
+				document.body.style.background='rgb('+rval+','+gval+','+bval+')'
+				document.getElementById('bnum').innerHTML=bval;
+			}
+		}	
+	</script>
+</head>
+<body>
+	红色：<input type="range" value="0" min="0" max="255" id="R"><span id="rnum"></span><br>
+	绿色：<input type="range" value="0" min="0" max="255" id="G"><span id="gnum"></span><br>
+	蓝色：<input type="range" value="0" min="0" max="255" id="B"><span id="bnum"></span><br>
+
+</body>
+</html>

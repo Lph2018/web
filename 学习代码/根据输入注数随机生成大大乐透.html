@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+    <script>
+        function show() {
+            var num = document.getElementById("num").value;
+
+
+            var a = new Array(5);
+            var b = new Array(2);
+            var z = 0;
+            while (z < num) {
+                for (i = 0; i < 5; i++) {
+                    a[i] = parseInt(Math.random() * 32 + 1);
+                }
+                for (i = 0; i < 5; i++) {
+                    for (j = i + 1; j < 5; j++) {
+                        if (a[i] == a[j]) {
+                            a[j] = parseInt(Math.random() * 32 + 1);
+                        }
+                    }
+                }
+
+
+                for (m = 0; m < 5; m++) {
+                    for (n = 4; n >= m; n--) {
+                        if (a[m] > a[n]) {
+                            var temp = a[m];
+                            a[m] = a[n];
+                            a[n] = temp;
+                        }
+                    }
+                }
+                for (i = 0; i < 5; i++)
+                    document.write(a[i] + ",");
+                for (j = 0; j < 2; j++) {
+                    b[j] = parseInt(Math.random() * 11 + 1);
+                    for (i = 0; i < 5;) {
+                        if (b[j] == a[i]) {
+                            b[j] = parseInt(Math.random() * 11 + 1);
+                            i++;
+                        } else {
+                            i++;
+                        }
+                    }
+                }
+                for (m = 0; m < 2; m++) {
+                    for (n = 1; n >= m; n--) {
+                        if (b[m] > b[n]) {
+                            var temp = b[m];
+                            b[m] = b[n];
+                            b[n] = temp;
+                        }
+                    }
+                }
+                for (j = 0; j < 2; j++) {
+                    document.write(b[j] + ",");
+                }
+                document.write("<br>");
+                z++;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    请输入随机生成的大乐透注数
+    <input type="text" id="num">
+    <input type="submit" value="提交" onClick="show()">
+</body>
+
+</html>

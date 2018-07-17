@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{background: #ccc;}
+		.box{width: 800px;height: 600px;margin: 100px auto;position: relative; }
+		.box div{width: 800px;height: 600px;position: absolute;left: 0;top: 0px; transition:all 2s; }
+		.z{background: url(z.png);}
+		.f{background: url(f.png);transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);backface-visibility: hidden;}
+
+		.z:hover{transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);}
+		.f:hover{transform: rotateX(0deg) rotateY(180deg) rotateZ(0deg);}
+		
+
+
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="z"></div>
+		<div class="f"></div>
+	</div>
+</body>
+</html

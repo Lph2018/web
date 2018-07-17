@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script>
+function max_ys(){
+	var x=prompt("请输入第1个数");
+	var y=prompt("请输入第2个数");
+	var z=prompt("请输入第3个数");
+	var temp,i=2,num=1;
+	temp=x;//假设x最小
+	for(i=2;i<temp;)
+	{
+		if(x%i==0&&y%i==0&&z%i==0){
+			num*=i;
+			x/=i;
+			y/=i;
+			z/=i;
+			}else {
+			   i++;
+			  if(x%i==0&&y%i==0&&z%i==0){
+			   num*=i;
+			   x/=i;
+			  y/=i;
+			  z/=i;
+			}else{
+				i+=2;
+			  if(x%i==0&&y%i==0&&z%i==0){
+			   num*=i;
+			   x/=i;
+			  y/=i;
+			  z/=i;
+				}
+			}
+		}
+	}
+	alert("3个数的最大公约数为："+num);
+}
+function min_bs(){
+	var x=prompt("请输入第1个数");
+	var y=prompt("请输入第2个数");
+	var z=prompt("请输入第3个数");
+	var i=2,num=1,temp;
+	temp=x;//假设x最小
+	for(i=2;i<temp;){
+		if(x%i==0&&y%i==0&&z%i==0){
+			num*=i;
+			x/=i;
+			y/=i;
+			z/=i;
+			}else {
+			   i++;
+			  if(x%i==0&&y%i==0&&z%i==0){
+			   num*=i;
+			   x/=i;
+			  y/=i;
+			  z/=i;
+			}else{
+				i+=2;
+			  if(x%i==0&&y%i==0&&z%i==0){
+			   num*=i;
+			   x/=i;
+			  y/=i;
+			  z/=i;
+				}
+			}
+		}
+	}
+		m=num*x*y*z;
+		alert("3个数的最小公倍数为："+m);
+}
+</script>
+</head>
+
+<body>
+<input type="button" value="最大公约数" onClick="max_ys()" />
+<input type="button" value="最小公倍数" onClick="min_bs()" />
+</body>
+</html>

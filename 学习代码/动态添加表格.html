@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<style>
+div {
+    width: 200px;
+    height: 200px;
+    border: 1px solid red;
+}
+</style>
+<body>
+<input type="button" value="添加" id="btn">
+<div id="box"></div>
+</body>
+</html>
+<script>
+    var arr=[
+   { name:"百度",href:"http://www.baidu.com"},
+   { name:"谷歌",href:"http://www.baidu.com"},
+   { name:"搜狗",href:"http://www.baidu.com"},
+   { name:"优酷",href:"http://www.baidu.com"},
+   { name:"淘宝",href:"http://www.baidu.com"},
+   { name:"京东",href:"http://www.baidu.com"}
+        ];
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    btn.onclick=function(){
+        //创建table加入div中
+        var tablObj=document.createElement("table");
+        box.appendChild(tablObj);
+        tablObj.border="1";
+        //创建行，把行添加到table中
+       for( var i =0;i<arr.length; i++){
+           var dt=arr[i];//每个元素
+           var trObj=document.createElement("tr");
+           tablObj.appendChild(trObj);
+           //创建第一列
+           var td1= document.createElement("td");
+                td1.innerText=dt.name;
+                trObj.appendChild(td1);
+            //创建第二列
+           var td2= document.createElement("td");
+                td2.innerHTML="<a href="+dt.href+">"+dt.name+"</a>";
+                trObj.appendChild(td2);
+                
+       }
+    }
+
+
+
+</script>

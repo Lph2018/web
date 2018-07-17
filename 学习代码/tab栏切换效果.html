@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	.wb{
+		width: 480px;
+		height: 400px;
+		border: 1px solid #ccc;
+		margin: 0 auto;
+	}
+	.hd{
+		width: 450px;
+		height: 100px;
+		
+	}
+	.bd{
+		width: 480px;
+		height: 300px;
+		background-color: yellow;
+	}
+	.wb div span.f1{
+		background-color: purple;
+	}
+	.wb div span{
+		display: block;
+		height: 100px;
+		width: 100px;
+		float: left;
+		margin-left: 10px;
+		text-align: center;
+		line-height: 100px;	
+		background-color: pink;
+	}
+	.bd ul{
+		width: 480px;
+		height: 300px;
+	}
+	.bd ul li{
+		display: none;
+		width: 480px;
+		height: 300px;
+	}
+	.bd ul .f1{
+		display: block;
+		background-color: purple;
+	}
+	
+</style>
+</head>
+<div class="wb" id="box">
+	<div class="hd" id="">
+		<span class="f1">一</span>
+		<span>二</span>
+		<span>三</span>
+		<span>四</span>
+	</div>
+	<div class="bd" id="">
+		<ul>
+			<li class="f1">我是一</li>
+			<li>我是二</li>
+			<li>我是三</li>
+			<li>我是四</li>
+		</ul>
+	</div>
+</div>
+<body>
+</body>
+</html>
+<script>
+	//获取最外层div
+	var  box = document.getElementById("box");
+	//里面第一个div
+	var hd = box.getElementsByTagName("div")[0];
+	//里面第二个div
+	var bd = box.getElementsByTagName("div")[1];
+	//获取所有的li标签
+	var list = bd.getElementsByTagName("li");
+	//获取所有的span标签
+	var spans = hd.getElementsByTagName("span");
+	//循环所有的span标签，添加点击事件
+	for(var i =0;i<spans.length;i++){
+		spans[i].setAttribute("index",i);
+		spans[i].onclick=function(){
+			//所有的span样式都去除
+			for(var j=0; j<spans.length;j++){
+			spans[j].removeAttribute("class");
+			}
+			//当前点击的span应用样式
+			this.className="f1";
+			
+			//点击span标签时候，获取自定义属性值
+			var num =this.getAttribute("index");
+			//获取所有的li标签,每个li标签先全部隐藏，
+			for(var k=0;k<list.length;k++){
+				list[k].removeAttribute("class");
+			}
+			//对应的点击标签显示
+			list[num].className="f1";
+			
+		}
+	}
+	
+	
+	
+	
+</script>

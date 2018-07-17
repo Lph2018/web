@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+</head>
+<style>
+    div {
+        text-align: center;
+        margin-top: 200px;
+    }
+
+    #txt {
+        width: 400px;
+        height: 30px;
+    }
+
+</style>
+
+<body>
+    <div id="box">
+        <input type="text" id="txt">
+        <input type="button" id="btn" value="搜索">
+    </div>
+</body>
+
+</html>
+<script type="text/javascript">
+    var keyworlds = ["小李", "小红", "王刘", "王五", "王子豪时光很帅的人", "苹果", "苹果很好吃"];
+    //获取文本框的注册键盘抬起事件
+    var txt = document.getElementById("txt");
+    txt.onkeyup = function() {
+        //获取次文本框的内容
+        var text = this.value;
+        var tempArr = []; //空数组
+        //把文本框输入的内容和数组中的每个数据进行对比
+        for (var i = 0; i < keyworlds.length; i++) {
+            if (keyworlds[i].indexOf(text) == 0) {
+                //是否是最开始出现的
+                tempArr.push(keyworlds[i]); //追加
+            }
+        }
+
+    }
+
+</script>
